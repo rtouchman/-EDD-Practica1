@@ -2,8 +2,8 @@ package structures;
 
 public class List<T, K> {
 
-	private Node<T, K> head = null;
-	private Node<T, K> tail = null;
+	Node<T, K> head = null;
+	Node<T, K> tail = null;
 
 	public void add(T node, K key) {
 
@@ -56,6 +56,49 @@ public class List<T, K> {
 			
 		}
 
+	}
+	
+	public T remove(K key){
+		
+		Node<T, K> result;
+		
+		if (null != head && key == head.getKey()) {
+
+			result = head;
+			head = head.getRight();
+			result.setRight(null);
+			
+			return result.getType();
+
+		} else if (null != head) {
+
+			Node<T, K> temp = head;
+			
+			while (null != temp.getRight() && key != temp.getKey()){
+				
+				temp = temp.getRight();
+				
+			}
+			
+			if(key == temp.getKey()){
+				
+				result = temp;
+				
+				
+				return result.getType();
+				
+			} else {
+				
+				return null;
+				
+			}
+			
+		} else {
+			
+			return null;
+			
+		}
+		
 	}
 
 }
