@@ -84,7 +84,6 @@ public class List<T, K> {
 				
 				result = temp;
 				
-				
 				return result.getType();
 				
 			} else {

@@ -10,6 +10,7 @@ public class Node<T,K> {
 	public Node(T type, K key){
 		this.type = type;
 		this.key = key;
+		this.right = null;
 	}
 
 	public Node<T, K> getRight() {

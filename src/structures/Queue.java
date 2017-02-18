@@ -23,7 +23,7 @@ public class Queue<T, K> extends List<T, K>{
 	
 	public T dequeue(){
 		
-		Node<T, K> temp = head;
+		Node<T, K> temp = head, result;
 		
 		while(tail != temp.getRight()){
 			
@@ -31,12 +31,14 @@ public class Queue<T, K> extends List<T, K>{
 			
 		}
 		
+		result = tail;
+		
 		tail = temp;
 		tail.setRight(head);
 		
-		temp.setRight(null);
+		result.setRight(null);
 		
-		return temp.getType();
+		return result.getType();
 		
 	}
 
